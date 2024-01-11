@@ -14,5 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $page_title = "Hello World!";
+
+    $data = [
+        'title' => $page_title,
+        'people' => [
+            'Giordano',
+            'Paolo',
+            'Marco',
+            'Gigi'
+        ],
+    ];
+
+    return view('welcome', $data);
 });
